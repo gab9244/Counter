@@ -5,15 +5,27 @@ let num = 0
 
 function increasing(){
     number.innerText =num +=1
-    number.style.color ='green'
+   
 }
 function decreasing() {
     number.innerText = num -=1
-    number.style.color ='red'
+    
 }
 function reseting (){
     number.innerHTML = num=0
+    
+}
+ 
+function changecolor(){
+   if(number.innerHTML >0) {
+    number.style.color ='green'
+   }
+   if(number.innerHTML == 0) {
     number.style.color ='black'
+   }
+   if(number.innerHTML <0) {
+    number.style.color ='red'
+   }
 }
 
 function counter (valor) {
@@ -32,6 +44,7 @@ function counter (valor) {
 Button.forEach((btn) => {
     btn.addEventListener('click', () => {
          counter(btn.innerText)
+         changecolor()
     })
 })
 
